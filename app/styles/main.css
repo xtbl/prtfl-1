@@ -19,11 +19,10 @@
    base styles
    ========================================================================== */
 body {
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Lato', sans-serif;
   background: #2d2e33 url('../images/bg_tile.png') 0 0 repeat;
 }
 a {
-  color: #ffffff;
   -webkit-transition: all 1s ease-out;
   -webkit-transition-property: all;
   -webkit-transition-duration: 1s;
@@ -44,7 +43,7 @@ a:hover {
 }
 p,
 h1 {
-  color: #999;
+  color: #606060;
 }
 h1 {
   font-family: 'Doppio One', sans-serif;
@@ -72,15 +71,23 @@ ul {
   margin: 2px;
   padding: 1%;
   color: #cf6b4c;
-  letter-spacing:40px
+  letter-spacing:40px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 #nav,
 #main-content,.resume-blocks {
   margin: 5%;
   clear: both;
 }
+#nav a {
+   font-size: 2em;
+   color: #8d8d8e;
+  }
 .resume-blocks {
 	text-align: center;
+  font-size: 1.2em;
+  font-weight: 100;
 }
 #hero img {
   width: 100%;
@@ -112,21 +119,25 @@ ul {
 .highligh-block p {
 	color: #ffffff;
 	font-size: 2em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 #nav {
   padding: 0 0 20px;
+  min-height: 50px;
 }
 #nav li {
   width: 20%;
   float: left;
   margin-right: 4.2%;
-  background: #51b1ad;
   text-align: center;
 }
 #nav li a {
   text-decoration: none;
   text-shadow: 2px 2px 2px #2D2E33;
   filter: dropshadow(color=#2d2e33, offx=2, offy=2);
+  font-weight: 300;
+  border-bottom: 1px solid #999;
 }
 #nav li h2 {
   margin: 0;
@@ -134,6 +145,7 @@ ul {
 }
 .resume-blocks h2{
 	text-align: center;
+  margin-bottom: 3%;
 }
 .title-a {
 	color: #e1704b;
@@ -147,7 +159,109 @@ ul {
 .title-b h2{
 	border-bottom: 2px solid #e1704b;
 }
+.active-link {
+  background-color: yellow;
+}
 
+/* accordion */
+.accordion {
+  text-align: left;
+}
+.accordion dt a {
+  color: #e1704b;
+  font-weight: 300;
+  text-align: left;
+}
+.accordion dt a span{
+  font-weight: bold;
+}
+.accordion dd ul li{
+  color: #606060;
+  list-style-type: disc;
+}
+.accordion dt a:hover {
+  background-color: yellow;
+  -webkit-transition: all 1s ease-out;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-delay: initial;
+  -moz-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+/* roll */
+
+.roll {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+
+    -webkit-perspective: 300px;
+       -moz-perspective: 300px;
+        -ms-perspective: 300px;
+            perspective: 300px;
+
+    -webkit-perspective-origin: 50% 50%;
+       -moz-perspective-origin: 50% 50%;
+        -ms-perspective-origin: 50% 50%;
+            perspective-origin: 50% 50%;
+}
+.roll:hover {
+    background: none;
+    text-shadow: none;
+}
+.roll span {
+    display: block;
+    position: relative;
+    padding: 0 2px;
+    pointer-events: none;
+
+    -webkit-transition: all 600ms ease;
+       -moz-transition: all 400ms ease;
+        -ms-transition: all 400ms ease;
+            transition: all 400ms ease;
+    
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.roll:hover span {
+    background: rgba(234,234,234,.9);
+
+    -webkit-transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+       -moz-transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+        -ms-transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+            transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+}
+.roll span:after {
+    content: attr(data-title);
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 1px 2px;
+    white-space: nowrap;
+
+    color: white;
+    background: #cf6b4c; 
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+            transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
 /* ==========================================================================
    content
    ========================================================================== */
@@ -157,6 +271,8 @@ ul {
   padding-right: 10%;
   font-size: 1.5em;
   text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
 }
 /* ==========================================================================
    footer
@@ -180,12 +296,16 @@ ul {
   box-shadow: 0px 2px 3px 2px #4f4d4d;
 }
 
+
 /* ==========================================================================
    Media query smaller than 750px and mobile
    ========================================================================== */
 @media screen and (max-device-width: 750px), screen and (max-width: 750px) {
   #header {
-    font-size: 1.1em;
+    font-size: 1.5em;
+  }
+  #header h1 {
+    letter-spacing: 20px;
   }
   #nav li {
     width: 44%;
@@ -194,9 +314,8 @@ ul {
     margin-bottom: 2%;
     text-align: center;
   }
-  #nav li h2 {
-    margin: 0;
-    font-size: 2em;
+  #nav a {
+   font-size: 2em;
   }
   #main-content p {
     padding-top: 3px;
@@ -214,11 +333,12 @@ ul {
    ========================================================================== */
 @media screen and (max-device-width: 480px), screen and (max-width: 480px) {
   #header {
-    font-size: 0.9em;
+    font-size: 1.8em;
     letter-spacing: 5px;
   }
   #header h1{
-    letter-spacing: 20px;
+    letter-spacing: 10px;
+    font-size: 1.2em;
   } 
   #nav li {
     width: 90%;
@@ -234,7 +354,7 @@ ul {
   }
   #main-content p {
     padding-top: 1px;
-    font-size: 0.8em;
+    font-size: 1.1em;
   }
   #footer p {
     font-size: 0.6em;
